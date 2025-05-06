@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/header">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fixed Navigation"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:gravity="center" />
+
+        <ImageButton
+            android:id="@+id/setting_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:paddingHorizontal="10dp"
+            android:src="@drawable/setting"
+            android:layout_marginStart="150dp"
+            android:contentDescription="setting"
+            android:scaleType="centerInside"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <!-- Scrollable Content -->
+        <ScrollView
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_navigation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/search_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search..."
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/search_bar"
+                    android:inputType="text"
+                    android:visibility="gone" /> <!-- Initially hidden -->
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/comscie" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/ComputerScience"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:paddingTop="8dp"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/white"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/brief_history_computer_science"
+                    android:textSize="16sp"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Content View 2 (Initially hidden) -->
+        <ScrollView
+            android:id="@+id/content_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:layout_above="@id/bottom_navigation"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_launcher_foreground" />
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:text="This is the second content page."
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/white"
+                    android:padding="8dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Fixed Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/nav_button_bg"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/plus_button"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/nav_button"
+            android:contentDescription="Zoom In"
+            android:scaleType="centerInside"
+            android:src="@drawable/aup"
+            app:tint="@color/blue"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/minus_button"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/nav_button"
+            android:contentDescription="Zoom Out"
+            android:scaleType="centerInside"
+            android:src="@drawable/adown"
+            app:tint="@color/blue"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/nav_button"
+            android:contentDescription="Search"
+            android:scaleType="centerInside"
+            android:src="@drawable/search"
+            app:tint="@color/blue"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            app:tint="@color/blue"
+            android:scaleType="centerInside"
+            android:background="@drawable/nav_button"
+            android:src="@drawable/previous"
+            tools:ignore="TouchTargetSizeCheck"/>
+
+        <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/nav_button"
+            android:contentDescription="Search"
+            android:scaleType="centerInside"
+            android:src="@drawable/next"
+            app:tint="@color/blue"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </LinearLayout>
+</RelativeLayout>
